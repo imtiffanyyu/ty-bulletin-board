@@ -1,0 +1,29 @@
+{
+  "name": "ty-bulletin-board",
+  "version": "1.0.0",
+  "description": "Homework: Bulletin Board Application (May 24, 2016)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imtiffanyyu/ty-bulletin-board.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imtiffanyyu/ty-bulletin-board/issues"
+  },
+  "homepage": "https://github.com/imtiffanyyu/ty-bulletin-board#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "pg": "^4.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

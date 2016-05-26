@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+	body
+	h2 Bulletin Board
+	a(href='/') Add New Message
+	br
+	a(href='/bulletinboard') View Messages
+	form(action="/board" method="POST")
+		div.input
+			input(type="text" placeholder="title" name="title")
+			br
+			input(type="text" placeholder="body" name="body")
+		div.actions
+		input(type="submit", value="Submit")
+	each post in board
+		h4= post.id + ': ' + post.title 
+		ul
+			li= post.body
