@@ -50,12 +50,29 @@ app.get ('/bulletinboard', function (req, res) {
         }
 
 		client.query("select * from messages ORDER BY id ASC", function (err, result) {
-			console.log(result.rows);
 			res.render ('board', {board: result.rows});
 			done();
 			pg.end(); // the client will idle for another 30 seconds, temporarily preventing the app from closing, unless this function is called
 		});
 	});
+});
+
+app.post('/delete', function(req, res) {
+
+    // Get a Postgres client from the connection pool
+    pg.connect(connectionString, function(err, client, done) {
+        // Handle connection errors
+        if(err) {
+          done();
+          return console.log(err);
+        }
+
+        // SQL Query > Delete Data
+        client.query("delete from messages where id=($1)", [req.body.deleteid]);
+		console.log('deleted from board');
+        res.redirect('/');
+    });
+
 });
 
 var server = app.listen(3000, function () {

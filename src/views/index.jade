@@ -3,7 +3,7 @@ html
 	head
 	body
 	h2 Bulletin Board
-	a(href='/') Add New Message
+	a(href='/') Add / Delete Messages
 	br
 	a(href='/bulletinboard') View Messages
 	form(action="/board" method="POST")
@@ -12,7 +12,13 @@ html
 			br
 			input(type="text" placeholder="body" name="body")
 		div.actions
-		input(type="submit", value="Submit")
+			input(type="submit", value="Submit")
+	form(action="/delete" method="POST")
+		div.input
+			input(type="number" placeholder="id" name="deleteid")
+		div.actions
+			input(type="submit", value="Delete")
+
 	each post in board
 		h4= post.id + ': ' + post.title 
 		ul
